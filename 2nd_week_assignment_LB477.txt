@@ -1,0 +1,423 @@
+////////////////////////////////////////////////////////////
+//
+//Prasad R. Bhosale 
+//Sunday (12/09/2021)
+// wap a program which accept one number from the user and print that number of even numbers on screen.(1)
+//
+//////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+int PrintEven(int iNo)
+{
+if(iNo <=0 )
+{
+    iNo = -iNo;
+}
+int i,p=0;
+for(i=0; i<iNo; i++)
+{
+p = p+2;
+printf("\t%d",p);
+}
+
+}
+int main()
+{
+int iValue = 0;
+printf("Even Value : \n");
+scanf("%d",&iValue);
+
+PrintEven(iValue);
+    return 0;
+}
+
+
+
+
+
+
+////////////////////////////////////////////////////////////
+//
+//Prasad R. Bhosale 
+//Sunday (12/09/2021)
+// wap a program which accept one number from the user and print even factors of that number.(2)
+//
+//////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+void Display_Factors(int iNo)
+{
+int i = 0;
+if (iNo <= 0)
+{
+    if(iNo<0)
+        {
+            iNo = -iNo;
+        }
+}
+    for (i=1; i<iNo; i++)
+        {
+        if(i<2 || i%2==0 && iNo%i==0)
+        //if(iNo%i==0)
+            {
+                printf("\t%d",i);
+                
+            }
+        }   
+}
+
+int main()
+{
+int iValue = 0;
+printf("Even Value : \n");
+scanf("%d",&iValue);
+
+Display_Factors(iValue);
+    return 0;
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////
+//
+//Prasad R. Bhosale 
+//Sunday (12/09/2021)
+// wap a program which accept one number from the user and print even factors of that  number.(3)
+//
+//////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+void Display_Factors(int iNo)
+{
+int i = 0;
+if (iNo <= 0)
+{
+    if(iNo<0)
+        {
+            iNo = -iNo;
+        }
+}
+    for (i=2; i<iNo; i++)
+        {
+        if(i%2==0 && iNo%i==0)
+            {
+                printf("\t%d",i); 
+            }
+        }   
+}
+
+int main()
+{
+int iValue = 0;
+printf("Even Value : \n");
+scanf("%d",&iValue);
+
+Display_Factors(iValue);
+    return 0;
+}
+
+
+
+
+////////////////////////////////////////////////////////////
+//
+//Prasad R. Bhosale 
+//Sunday (12/09/2021)
+// wap a program which accept one character from the user and convert the case of that character.(upper/lower)(4)
+//
+//////////////////////////////////////////////////////////
+
+void Display_Convert(char cValue)
+{
+if(cValue == toupper(cValue))
+{
+printf("%c",tolower(cValue));
+}
+else if(cValue == tolower(cValue))
+{
+    printf("%c",toupper(cValue));
+}
+}
+
+int main()
+{
+char cValue = '\0';
+printf("Enter Character : \n");
+scanf("%c",&cValue);
+
+Display_Convert(cValue);
+    return 0;
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////
+//
+//Prasad R. Bhosale 
+//Sunday (12/09/2021)
+// wap a program which accept a character from user and check whether that character is vowel (a,e,i,o,u) or not.(5)
+//
+//////////////////////////////////////////////////////////
+#include<stdio.h>
+#include<stdbool.h>
+
+typedef enum{FALSE,TRUE} BOOL;
+#define TRUE 1
+#define FALSE 0
+int ChkVowel(char cValue)
+{
+if(cValue == 'A' || cValue =='a' ||cValue == 'E' || cValue =='e' ||cValue == 'I' || cValue =='i' ||cValue == 'O' || cValue =='o' || cValue == 'U' || cValue =='u')
+{
+    return TRUE;
+}
+else
+    {
+        return FALSE;
+    }
+}
+
+int main()
+{
+char cValue = '\0';
+BOOL bRet = FALSE;
+printf("Enter Character : \n");
+scanf("%c",&cValue);
+
+
+bRet=ChkVowel(cValue);
+if (bRet == TRUE)
+{
+    printf("It is vowel");
+    printf("\nTRUE");
+}
+else
+{
+    printf("It is not a vowel");
+    printf("\n FALSE");
+}
+    return 0;
+}
+
+
+
+
+
+
+////////////////////////////////////////////////////////////
+//
+//Prasad R. Bhosale 
+//Sunday (12/09/2021)
+// wap a program which accept one number from the user and display its multiplication of factors.(6)
+//
+//////////////////////////////////////////////////////////
+#include<stdio.h>
+
+int i,iMult=1;
+int MultiFact(int iNo)
+{
+    for(i=1;i<iNo;i++)
+    {
+        if(iNo%i==0)
+        {
+            iMult = iMult * i;
+        }
+    }
+    return iMult;
+}
+
+int main()
+{
+int iValue = 0;
+int iRet = 0;
+printf("Enter number :");
+scanf("%d",&iValue);
+
+iRet = MultiFact(iValue);
+
+printf("%d",iRet);
+
+return 0;
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////
+//
+//Prasad R. Bhosale 
+//Sunday (12/09/2021)
+// wap a program which accept one number from the user and display its factors in decreasing order.(7)
+//
+//////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+void FactRev(int iNo)
+{
+int i = 0;
+    if(iNo<0)
+        {
+            iNo = -iNo;
+        }
+    for (i=iNo/2; i>0; i--)
+        {
+        if(iNo%i==0)
+            {
+                printf("\t%d",i); 
+            }
+        }   
+}
+
+int main()
+{
+int iValue = 0;
+printf("Even Value : \n");
+scanf("%d",&iValue);
+
+FactRev(iValue);
+    return 0;
+}
+
+
+
+
+
+
+////////////////////////////////////////////////////////////
+//
+//Prasad R. Bhosale 
+//Sunday (12/09/2021)
+// wap a program which accept one number from the user and display all its non factors.(8)
+//
+//////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+void NonFact(int iNo)
+{
+int i = 0;
+    if(iNo<0)
+        {
+            iNo = -iNo;
+        }
+    for (i=2; i<iNo; i++)
+        {
+        if(iNo%i!=0)
+            {
+                printf("\t%d",i); 
+            }
+        }   
+}
+
+int main()
+{
+int iValue = 0;
+printf("Even Value : \n");
+scanf("%d",&iValue);
+
+NonFact(iValue);
+    return 0;
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////
+//
+//Prasad R. Bhosale 
+//Sunday (12/09/2021)
+// wap a program which accept one number from the user and return summation of all its non factors.(9)
+//
+//////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+int SumNonFact(int iNo)
+{
+int i = 0,iSum = 0;
+    if(iNo<0)
+        {
+            iNo = -iNo;
+        }
+    for (i=2; i<iNo; i++)
+        {
+        if(iNo%i!=0)
+            {
+                iSum = iSum + i;  
+            }
+        } 
+        return iSum;
+}
+
+int main()
+{
+int iValue = 0;
+int iRet = 0;
+
+printf("Even Value : \n");
+scanf("%d",&iValue);
+
+iRet = SumNonFact(iValue);
+printf("\n %d",iRet);
+    return 0;
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////
+//
+//Prasad R. Bhosale 
+//Sunday (12/09/2021)
+// wap a program which accept one number from the user and return difference between summation of all its factors and non factors.(10)
+//
+//////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+int FactDiff(int iNo)
+{
+int i = 0,iSum = 0;
+int iSum1=0,iSum2=0,iDiff=0;
+    if(iNo<0)
+        {
+            iNo = -iNo;
+        }
+    for (i=1; i<iNo; i++)
+        {
+        if(iNo%i==0)
+            {
+                iSum1 = iSum1 + i;  
+            }
+        else
+        {
+            iSum2 = iSum2 +i;
+        }
+        } 
+        iDiff = iSum1 - iSum2;
+        return iDiff;
+}
+
+int main()
+{
+int iValue = 0;
+int iRet = 0;
+
+printf("Even Value : \n");
+scanf("%d",&iValue);
+
+iRet = FactDiff(iValue);
+printf("\n %d",iRet);
+    return 0;
+}
+
